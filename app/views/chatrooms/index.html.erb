@@ -1,0 +1,12 @@
+<h1>Chatrooms/Index.html.erb</h1>
+
+
+<% @chatrooms.each do |chatroom| %>
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <%= chatroom.topic %>
+    </div>
+  </div>
+
+<% end %>
