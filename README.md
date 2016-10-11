@@ -1,24 +1,18 @@
-# README
+## PocketLines
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a simple chatting app built using an implementation of Action Cable and Rails 5. Users can sign up and log in with a username. They can then create a chatroom or enter an existing chatroom and message each other in real time.
 
-Things you may want to cover:
+This app was built using the walkthrough provided by Sophie DeBenedetto at [her Heroku blog](https://blog.heroku.com/real_time_rails_implementing_websockets_in_rails_5_with_action_cable).
 
-* Ruby version
+To run locally you will need
 
-* System dependencies
+* Ruby 2.3.0
+* Postgres
+* Redis
 
-* Configuration
+Once you clone this repo:
 
-* Database creation
+* `bundle install`
+* `rake db:create; rake db:migrate`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thank you.
