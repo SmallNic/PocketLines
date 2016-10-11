@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   resources :chatrooms, param: :slug
   resources :messages, only: :create
 
+
+  #Step 1 in Establishing the WebSocket Connection (server side): mount the Action Cable server on a sub-URI of our main application:
   #Serve websocket cable requests in-process
   mount ActionCable.server => "/cable"
+  #When our main app is instantiated, an instance of Action Cable will also be created. Action Cable will establish a websocket connection on ws://localhost:3000/cable, and begin listening for socket requests on that URI (using Rack socket hijacking API).
+  #Step 2 is establishing the socket connection client side, which we do via Javascript
 
 end

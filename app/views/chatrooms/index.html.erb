@@ -1,12 +1,20 @@
-<h1>Chatrooms/Index.html.erb</h1>
+<div class="row col-md-8 col-md-offset-2" id="chatroom-title">
+  <h1>Chatrooms</h1>
+</div>
 
+<div class="row col-md-8 col-md-offset-2" id="chatrooms">
+  <%= render partial: 'chatroom_form', locals: {chatroom: @chatroom} %>
 
-<% @chatrooms.each do |chatroom| %>
-
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-      <%= chatroom.topic %>
-    </div>
+  <div id="chatroom-errors">
   </div>
 
-<% end %>
+
+  <% if @chatrooms.any? %>
+    <ul id="chatroom-index">
+      <%= render @chatrooms%>
+    </ul>
+  <%else %>
+    <p>Be the first one to make a chatroom!</p>
+  <% end %>
+
+</div><!-- row col -->

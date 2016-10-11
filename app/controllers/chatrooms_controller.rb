@@ -20,11 +20,13 @@ class ChatroomsController < ApplicationController
   def create
     @chatroom = Chatroom.new(chatroom_params)
     if @chatroom.save
+      binding.pry
       respond_to do |format|
-        format.html { redirect_to @chatroom }
-        format.js
+        format.html { redirect_to chatroom_path(@chatroom) }
+        format.js {}
       end
     else
+      binding.pry
       respond_to do |format|
         flash[:notice] = {error: ["a chatroom with this topic already exists"]}
         format.html { redirect_to new_chatroom_path }

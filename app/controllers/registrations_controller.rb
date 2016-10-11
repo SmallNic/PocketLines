@@ -7,12 +7,14 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    username = Faker::Name.first_name + "" + Faker::Name.last_name
-    current_usernames = User.all.pluck[:username]
-    while current_usernames.include?username
-      username = Faker::Name.first_name + "" + Faker::Name.last_name
-    end
-    user = User.new(username:username)
+    # username = Faker::Name.first_name + "" + Faker::Name.last_name
+    # current_usernames = User.all.pluck[:username]
+    # while current_usernames.include?username
+    #   username = Faker::Name.first_name + "" + Faker::Name.last_name
+    # end
+    # user = User.new(username:username)
+
+    user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
       redirect_to chatrooms_path
